@@ -71,15 +71,24 @@ jobs:
     - name: Inspect
       shell: bash
       run: |
-        pwd
-        echo
+      echo `pwd`
         ls -la .
-        echo
+        echo GITHUB_WORKSPACE ${GITHUB_WORKSPACE}
         ls -la ${GITHUB_WORKSPACE}
-        echo
+        echo HOME ${HOME}
         ls -la ${HOME}
-        echo
+        echo /
         ls -la /
+        echo /home
+        ls -la /home
+        echo /home/runner
+        ls -la /home/runner
+        echo /home/runner/work
+        ls -la /home/runner/work
+        echo /home/runner/work/Halide
+        ls -la /home/runner/work/Halide
+        echo /home/runner/work/Halide/Halide
+        ls -la /home/runner/work/Halide/Halide
 
     - uses: actions/checkout@v2
       with:

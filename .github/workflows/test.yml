@@ -71,7 +71,7 @@ jobs:
     - name: Inspect
       shell: bash
       run: |
-      echo `pwd`
+        echo `pwd`
         ls -la .
         echo GITHUB_WORKSPACE ${GITHUB_WORKSPACE}
         ls -la ${GITHUB_WORKSPACE}

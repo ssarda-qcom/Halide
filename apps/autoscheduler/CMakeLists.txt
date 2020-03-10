@@ -126,7 +126,7 @@ add_dependencies(demo_included_schedule_file included_schedule_file
                  auto_schedule)
 
 add_custom_command(TARGET demo_included_schedule_file POST_BUILD
-                   COMMAND demo_included_schedule_file
+                   COMMAND $<TARGET_FILE:demo_included_schedule_file>
                            --benchmarks=all
                            --benchmark_min_time=1
                            --estimate_all

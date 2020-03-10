@@ -97,7 +97,7 @@ target_link_libraries(demo_apps_autoscheduler PRIVATE demo)
 add_dependencies(demo_apps_autoscheduler demo auto_schedule)
 
 add_custom_command(TARGET demo_apps_autoscheduler POST_BUILD
-                   COMMAND demo_apps_autoscheduler
+                   COMMAND $<TARGET_FILE:demo_apps_autoscheduler>
                            --benchmarks=all
                            --benchmark_min_time=1
                            --estimate_all

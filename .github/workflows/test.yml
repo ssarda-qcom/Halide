@@ -68,6 +68,15 @@ jobs:
             build_tool: make
 
     steps:
+    - name: Inspect
+      shell: bash
+      run: |
+        ls -l ${GITHUB_WORKSPACE}
+        echo
+        ls -l ${HOME}
+        echo
+        ls -l /
+
     - uses: actions/checkout@v2
       with:
         path: 'halide'
@@ -238,9 +247,9 @@ jobs:
         if [[ ${{matrix.target_arch}} == x86 && \
               ${{matrix.target_os}} == linux && \
               ${{matrix.target_bits}} == 32 ]]; then
-          export CC="${CC} -m32"
-          export CXX="${CXX} -m32"
-          export LD="${LD} -melf_i386"
+          echo ::set-env name=CC::"${CC} -m32"
+          echo ::set-env name=CXX::"${CXX} -m32"
+          echo ::set-env name=LD::"${LD} -melf_i386"
         fi
 
     - name: Configure Halide (CMake)

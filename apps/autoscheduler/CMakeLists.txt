@@ -5,7 +5,7 @@ set(WF_CPP ${BASENAME_WF}.cpp)
 
 add_custom_command(OUTPUT ${WF_CPP}
                    DEPENDS ${WF} binary2cpp
-                   COMMAND binary2cpp ${BASENAME_WF}_weights < ${WF} > ${WF_CPP}
+                   COMMAND $<TARGET_FILE:binary2cpp> ${BASENAME_WF}_weights < ${WF} > ${WF_CPP}
                    COMMENT "${WF} -> ${WF_CPP}"
                    VERBATIM)
 

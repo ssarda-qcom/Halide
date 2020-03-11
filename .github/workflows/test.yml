@@ -195,8 +195,8 @@ jobs:
         fi
 
         # TODO: is this necessary?
-        echo ::set-env name=HL_TARGET::"x86-32-linux"
-        echo ::set-env name=HL_JIT_TARGET::"x86-32-linux"
+        # echo ::set-env name=HL_TARGET::"x86-32-linux"
+        # echo ::set-env name=HL_JIT_TARGET::"x86-32-linux"
 
     - name: Configure Env Vars
       shell: bash
